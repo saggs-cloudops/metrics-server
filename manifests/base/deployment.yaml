@@ -16,6 +16,8 @@ spec:
       - name: tmp-dir
         emptyDir: {}
       priorityClassName: system-cluster-critical
+      # SAGGS-CloudOps -> needed for Weave Net
+      hostNetwork: true
       containers:
       - name: metrics-server
         image: gcr.io/k8s-staging-metrics-server/metrics-server:master
